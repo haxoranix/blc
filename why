@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Black Lion Why Choose Us Section</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Inter, Arial, sans-serif;
+      background: #111111;
+      color: #ffffff;
+    }
+
+    .why-section {
+      position: relative;
+      width: 100%;
+      padding: 110px 18px;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(8, 8, 8, 0.68) 0%, rgba(8, 8, 8, 0.54) 48%, rgba(8, 8, 8, 0.42) 100%),
+        linear-gradient(0deg, rgba(8, 8, 8, 0.62) 0%, rgba(8, 8, 8, 0.30) 100%),
+        url("https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=1800&q=85");
+      background-size: cover;
+      background-position: center;
+      color: #ffffff;
+    }
+
+    .why-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background:
+        radial-gradient(circle at 78% 18%, rgba(243, 210, 122, 0.16), transparent 34%),
+        radial-gradient(circle at 14% 82%, rgba(255, 255, 255, 0.10), transparent 30%);
+      pointer-events: none;
+    }
+
+    .why-wrap {
+      position: relative;
+      z-index: 2;
+      width: min(1320px, 100%);
+      margin: 0 auto;
+    }
+
+    .why-header {
+      display: grid;
+      grid-template-columns: 0.95fr 0.72fr;
+      gap: 90px;
+      align-items: end;
+      margin-bottom: 58px;
+    }
+
+    .why-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 22px;
+      color: rgba(255, 255, 255, 0.76);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .why-kicker::before {
+      content: "";
+      width: 28px;
+      height: 1px;
+      background: rgba(243, 210, 122, 0.86);
+      display: inline-block;
+    }
+
+    .why-title {
+      max-width: 760px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(52px, 5.4vw, 86px);
+      line-height: 0.98;
+      letter-spacing: -0.065em;
+      font-weight: 500;
+      color: #ffffff;
+    }
+
+    .why-intro {
+      max-width: 560px;
+      padding-bottom: 8px;
+      font-size: 17px;
+      line-height: 1.72;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.76);
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 18px;
+    }
+
+    .why-card {
+      position: relative;
+      min-height: 270px;
+      padding: 32px;
+      border-radius: 26px;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      box-shadow: 0 28px 80px rgba(0, 0, 0, 0.22);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      isolation: isolate;
+    }
+
+    .why-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.035)),
+        radial-gradient(circle at 100% 0%, rgba(243, 210, 122, 0.18), transparent 38%);
+      opacity: 0.9;
+      transition: opacity 0.3s ease;
+    }
+
+    .why-card:hover::before {
+      opacity: 1;
+    }
+
+    .why-card.one {
+      grid-column: span 6;
+    }
+
+    .why-card.two {
+      grid-column: span 6;
+    }
+
+    .why-card.three,
+    .why-card.four,
+    .why-card.five {
+      grid-column: span 4;
+    }
+
+    .why-mark {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: fit-content;
+      min-width: 54px;
+      height: 54px;
+      padding: 0 16px;
+      margin-bottom: 36px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #f3d27a 0%, #c99a35 100%);
+      color: #111111;
+      font-size: 20px;
+      line-height: 1;
+      font-weight: 900;
+      box-shadow: 0 18px 46px rgba(201, 154, 53, 0.26);
+    }
+
+    .why-card h3 {
+      max-width: 600px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(34px, 3.4vw, 58px);
+      line-height: 1;
+      letter-spacing: -0.055em;
+      font-weight: 500;
+      color: #ffffff;
+      margin-bottom: 18px;
+    }
+
+    .why-card.one h3,
+    .why-card.two h3 {
+      font-size: clamp(42px, 4.6vw, 68px);
+      max-width: 760px;
+    }
+
+    .why-card p {
+      max-width: 640px;
+      font-size: 15px;
+      line-height: 1.65;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.76);
+    }
+
+    @media (max-width: 1100px) {
+      .why-section {
+        padding: 90px 18px;
+      }
+
+      .why-header {
+        grid-template-columns: 1fr;
+        gap: 26px;
+        margin-bottom: 46px;
+      }
+
+      .why-intro {
+        max-width: 760px;
+        padding-bottom: 0;
+      }
+
+      .why-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .why-card.one,
+      .why-card.two,
+      .why-card.three,
+      .why-card.four,
+      .why-card.five {
+        grid-column: auto;
+      }
+
+      .why-card.five {
+        grid-column: span 2;
+      }
+
+      .why-card.one h3,
+      .why-card.two h3 {
+        font-size: clamp(36px, 5vw, 54px);
+      }
+    }
+
+    @media (max-width: 700px) {
+      .why-section {
+        padding: 76px 14px;
+        background-position: center;
+      }
+
+      .why-kicker {
+        margin-bottom: 18px;
+      }
+
+      .why-title {
+        font-size: clamp(42px, 12vw, 60px);
+        line-height: 1;
+        letter-spacing: -0.06em;
+      }
+
+      .why-intro {
+        font-size: 15.5px;
+        line-height: 1.7;
+      }
+
+      .why-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .why-card,
+      .why-card.five {
+        grid-column: auto;
+        min-height: auto;
+        padding: 24px;
+        border-radius: 22px;
+      }
+
+      .why-mark {
+        height: 48px;
+        min-width: 48px;
+        padding: 0 14px;
+        border-radius: 16px;
+        margin-bottom: 30px;
+        font-size: 18px;
+      }
+
+      .why-card h3,
+      .why-card.one h3,
+      .why-card.two h3 {
+        font-size: clamp(34px, 10vw, 46px);
+        letter-spacing: -0.055em;
+      }
+
+      .why-card p {
+        font-size: 14.5px;
+        line-height: 1.62;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="why-section" id="why-choose-us">
+    <div class="why-wrap">
+
+      <div class="why-header">
+        <div>
+          <div class="why-kicker">Why Choose Us</div>
+
+          <h2 class="why-title">Built to Earn Your Trust</h2>
+        </div>
+
+        <p class="why-intro">
+          Work with a remodeling and construction team based in Newark, Delaware, serving homeowners and businesses with experience, proper coverage, clear communication, and dependable workmanship.
+        </p>
+      </div>
+
+      <div class="why-grid">
+
+        <div class="why-card one">
+          <div>
+            <div class="why-mark">10+</div>
+            <h3>10+ Years in Business</h3>
+          </div>
+
+          <p>
+            A proven construction and remodeling company with hands-on experience across residential and commercial projects.
+          </p>
+        </div>
+
+        <div class="why-card two">
+          <div>
+            <div class="why-mark">✓</div>
+            <h3>Licensed & Insured</h3>
+          </div>
+
+          <p>
+            Work with a professional team that follows proper standards, protects your property, and takes project responsibility seriously.
+          </p>
+        </div>
+
+        <div class="why-card three">
+          <div>
+            <div class="why-mark">★</div>
+            <h3>Veteran Owned</h3>
+          </div>
+
+          <p>
+            A company built on discipline, accountability, service, and pride in doing the work the right way.
+          </p>
+        </div>
+
+        <div class="why-card four">
+          <div>
+            <div class="why-mark">A+</div>
+            <h3>A+ BBB Rating</h3>
+          </div>
+
+          <p>
+            A strong reputation signal that reflects professionalism, trust, and commitment to client satisfaction.
+          </p>
+        </div>
+
+        <div class="why-card five">
+          <div>
+            <div class="why-mark">↔</div>
+            <h3>Clear Communication. Quality Builds.</h3>
+          </div>
+
+          <p>
+            Get honest expectations, direct updates, durable materials, clean workmanship, and construction details built for long-term value.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>
